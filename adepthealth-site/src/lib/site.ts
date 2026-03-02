@@ -1,11 +1,9 @@
 export const siteConfig = {
   companyName: "AdeptHealth.AI",
-  contactEmail: "rman7411@gmail.com",
-  contactMailto: "mailto:rman7411@gmail.com",
+  contactEmail: "contact@adepthealth.ai",
+  contactMailto: "mailto:contact@adepthealth.ai",
   navLinks: [
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "/#contact" },
   ],
   coreServices: [
     {
@@ -31,10 +29,26 @@ export const siteConfig = {
     "Scale and Monitoring",
   ],
   outcomes: [
-    "Faster documentation",
-    "Reduced manual review",
-    "Improved patient access",
-    "Audit-ready governance",
+    {
+      title: "Faster documentation",
+      description:
+        "Reduce charting friction with AI-assisted drafting and cleaner handoffs.",
+    },
+    {
+      title: "Reduced manual review",
+      description:
+        "Automate repetitive checks so teams can focus on exceptions and decisions.",
+    },
+    {
+      title: "Improved patient access",
+      description:
+        "Shorten intake and routing delays that slow scheduling and care coordination.",
+    },
+    {
+      title: "Audit-ready governance",
+      description:
+        "Maintain clear controls, oversight, and traceability across AI-enabled workflows.",
+    },
   ],
   trustBullets: [
     "Privacy-first design",
@@ -64,32 +78,32 @@ export const siteConfig = {
     {
       question: "What data do you need to start?",
       answer:
-        "We start with workflow context and a light data inventory, then define the minimum data needed for pilot validation.",
+        "We begin with workflow context, current process pain points, and a practical data inventory across your existing systems. From there, we define the minimum data needed for a pilot, document assumptions, and avoid over-scoping before value is proven.",
     },
     {
       question: "Do you build solutions or advise teams?",
       answer:
-        "Both. We can guide your internal team, build prototypes, and support production rollout with your existing stack.",
+        "Both. We can advise leadership and implementation teams, build targeted prototypes, and support production rollout using your current technology stack and vendors. Engagements can be advisory-led, build-led, or a hybrid depending on your internal capacity.",
     },
     {
       question: "How do you handle compliance?",
       answer:
-        "We include governance checkpoints, access controls, documentation, and human oversight from the first phase.",
+        "Compliance is built into delivery from day one through governance checkpoints, role-based access controls, documentation standards, and human oversight expectations. We work with your security and legal stakeholders early so controls are aligned before scale decisions.",
     },
     {
       question: "What timeline should we expect?",
       answer:
-        "Most engagements begin with a short discovery and planning phase, then move into pilot and scale decisions.",
+        "Most engagements start with a focused discovery and planning phase, then move into pilot validation with clear success criteria. If outcomes and controls are met, we transition into a scaled implementation plan with monitoring and ownership defined.",
     },
     {
       question: "Can you work with our current vendors?",
       answer:
-        "Yes. We design for interoperability and collaborate with existing EHR, analytics, and cloud partners.",
+        "Yes. We design for interoperability and collaborate with your existing EHR, analytics, cloud, and integration partners instead of forcing a tool reset. The goal is to reduce implementation friction while still improving reliability, governance, and adoption.",
     },
     {
       question: "Which AI capabilities do you support?",
       answer:
-        "LLM workflows, predictive models, intelligent automation, and model monitoring for ongoing reliability.",
+        "We support LLM-enabled workflows, predictive modeling, intelligent automation, and monitoring strategies that keep performance stable over time. Capability selection is driven by workflow fit, risk profile, and measurable operational value rather than novelty.",
     },
   ],
   servicePageItems: [

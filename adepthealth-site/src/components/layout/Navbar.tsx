@@ -1,36 +1,86 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { ThemeToggle } from "@/src/components/ui/ThemeToggle";
 import { Container } from "@/src/components/ui/Container";
-import { Button } from "@/src/components/ui/Button";
 import { siteConfig } from "@/src/lib/site";
 
 export function Navbar() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const isActiveLink = (href: string) =>
+    href.includes("#") ? pathname === href.split("#")[0] : pathname === href;
+  const activePillClasses =
+    "bg-[var(--primary)] text-[var(--primary-foreground)] shadow-sm shadow-black/25 border border-transparent";
+  const idlePillClasses =
+    "bg-transparent text-[var(--foreground)] hover:bg-[var(--surface)] hover:ring-1 hover:ring-[var(--border)]";
+
   return (
-    <header className="sticky top-0 z-50 pt-3">
+    <header className="sticky inset-x-0 top-4 z-[70]">
       <Container>
         <nav
           aria-label="Main navigation"
-          className="rounded-3xl border bg-[var(--surface)] px-4 py-3 backdrop-blur sm:px-6"
+          className="mx-auto w-full rounded-[36px] border border-neutral-300/60 bg-[color:rgb(255_255_255_/_0.58)] px-4 py-3.5 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.9)] backdrop-blur-xl dark:border-white/15 dark:bg-[color:rgb(20_20_20_/_0.62)] sm:px-6"
         >
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <Link
               href="/"
-              className="text-lg font-semibold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
+              aria-label={siteConfig.companyName}
+              className="rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)]"
             >
-              {siteConfig.companyName}
+              <Image
+                src="/LogoBlackLong.png"
+                alt={`${siteConfig.companyName} logo`}
+                width={384}
+                height={96}
+                className="block h-12 w-auto dark:hidden"
+                priority
+              />
+              <Image
+                src="/LogoWhiteLong.png"
+                alt={`${siteConfig.companyName} logo`}
+                width={384}
+                height={96}
+                className="hidden h-12 w-auto dark:block"
+                priority
+              />
             </Link>
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2.5">
               {siteConfig.navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-full px-3 py-2 text-sm text-slate-700 transition hover:bg-[var(--surface-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)] dark:text-slate-200"
+                  aria-current={link.label === "Contact" ? undefined : isActiveLink(link.href) ? "page" : undefined}
+                  onClick={(event) => {
+                    if (link.label !== "Contact") return;
+
+                    event.preventDefault();
+
+                    if (pathname === "/") {
+                      document.getElementById("contact")?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                      return;
+                    }
+
+                    sessionStorage.setItem("scrollToContact", "1");
+                    router.push("/#contact");
+                  }}
+                  className={`inline-flex cursor-pointer items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary)] ${
+                    link.label === "Contact"
+                      ? "border border-transparent bg-neutral-900 text-white hover:bg-[var(--primary)] hover:text-[var(--primary-foreground)]"
+                      : isActiveLink(link.href)
+                        ? activePillClasses
+                        : idlePillClasses
+                  }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <ThemeToggle />
-              <Button href="/contact">Contact</Button>
             </div>
           </div>
         </nav>

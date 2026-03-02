@@ -12,13 +12,13 @@ type ButtonProps = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "inline-flex cursor-pointer items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-60";
 
 const variantClasses = {
   primary:
-    "bg-[var(--primary)] text-[var(--primary-foreground)] hover:opacity-90 focus-visible:outline-[var(--primary)]",
+    "border border-transparent bg-[var(--primary)] text-[var(--primary-foreground)] shadow-sm shadow-black/25 hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline-[var(--primary)]",
   secondary:
-    "border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:bg-[var(--surface-muted)] focus-visible:outline-[var(--primary)]",
+    "border border-[var(--border)] bg-[var(--surface-muted)] text-[var(--foreground)] hover:-translate-y-0.5 hover:bg-[var(--surface)] focus-visible:outline-[var(--primary)]",
 } as const;
 
 export function Button({

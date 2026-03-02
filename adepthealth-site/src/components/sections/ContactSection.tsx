@@ -10,7 +10,7 @@ type ContactSectionProps = {
 
 export function ContactSection({ showHeading = false }: ContactSectionProps) {
   return (
-    <section id="contact" className="py-16 sm:py-20">
+    <section id="contact" className="py-14 sm:py-16">
       <Container>
         <Card className="p-7 sm:p-10">
           {showHeading ? (
@@ -22,9 +22,9 @@ export function ContactSection({ showHeading = false }: ContactSectionProps) {
           ) : (
             <h2 className="text-2xl font-semibold sm:text-3xl">Contact</h2>
           )}
-          <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_280px]">
+          <div className="mt-6 grid gap-6">
             <ContactForm />
-            <aside className="rounded-2xl border bg-[var(--surface-muted)] p-5">
+            <aside className="rounded-2xl border bg-[var(--surface-muted)] p-6 text-center">
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--primary)]">
                 Alternative
               </h3>

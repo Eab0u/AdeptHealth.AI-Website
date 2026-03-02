@@ -5,7 +5,7 @@ import { siteConfig } from "@/src/lib/site";
 
 export function Testimonials() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-14 sm:py-16">
       <Container>
         <SectionHeading
           eyebrow="Testimonials"

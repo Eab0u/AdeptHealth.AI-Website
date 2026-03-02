@@ -37,6 +37,18 @@ export function Footer() {
         <p className="mt-8 text-xs text-slate-500 dark:text-slate-400">
           {new Date().getFullYear()} {siteConfig.companyName}. All rights reserved.
         </p>
+        <div className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+          <p>Created By Rahul Manchanda Izquierdo</p>
+          <p>Universitat de Maryland, College Park</p>
+          <p>
+            <a
+              href="mailto:rman7411@gmail.com"
+              className="underline underline-offset-4"
+            >
+              rman7411@gmail.com
+            </a>
+          </p>
+        </div>
       </Container>
     </footer>
   );

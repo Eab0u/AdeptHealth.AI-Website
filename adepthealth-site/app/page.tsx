@@ -4,9 +4,9 @@ import { ServicesPreview } from "@/src/components/sections/ServicesPreview";
 import { Process } from "@/src/components/sections/Process";
 import { Outcomes } from "@/src/components/sections/Outcomes";
 import { Trust } from "@/src/components/sections/Trust";
-import { Testimonials } from "@/src/components/sections/Testimonials";
 import { FAQ } from "@/src/components/sections/FAQ";
 import { ContactSection } from "@/src/components/sections/ContactSection";
+import { ContactScrollSync } from "@/src/components/sections/ContactScrollSync";
 
 export const metadata: Metadata = {
   title: "AdeptHealth.AI",
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <div className="pb-8 sm:pb-12">
+      <ContactScrollSync />
       <Hero />
       <ServicesPreview />
       <Process />
       <Outcomes />
       <Trust />
-      <Testimonials />
       <FAQ />
       <ContactSection />
-    </>
+    </div>
   );
 }

@@ -15,6 +15,13 @@ export const metadata: Metadata = {
     template: "%s | AdeptHealth.AI",
   },
   description: "Healthcare AI strategy and implementation consulting.",
+  icons: {
+    icon: [
+      { url: "/tab-icon-rounded.png?v=1", type: "image/png" },
+    ],
+    shortcut: "/tab-icon-rounded.png?v=1",
+    apple: "/tab-icon-rounded.png?v=1",
+  },
 };
 
 export default function RootLayout({
