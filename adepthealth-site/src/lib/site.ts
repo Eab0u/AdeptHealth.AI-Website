@@ -50,12 +50,37 @@ export const siteConfig = {
         "Maintain clear controls, oversight, and traceability across AI-enabled workflows.",
     },
   ],
-  trustBullets: [
-    "Privacy-first design",
-    "Security-minded delivery",
-    "Experience in regulated environments",
-    "Human oversight and governance",
-    "Do not submit PHI in contact form",
+  trustItems: [
+    {
+      title: "Privacy-first design",
+      blurb:
+        "Workflows are designed with data minimization and access boundaries from the first architecture pass.",
+    },
+    {
+      title: "Security-minded delivery",
+      blurb:
+        "Implementation includes secure defaults, role-based controls, and operational guardrails for production use.",
+    },
+    {
+      title: "Experience in regulated environments",
+      blurb:
+        "Projects are structured for healthcare realities, including policy review, audit readiness, and stakeholder sign-off.",
+    },
+    {
+      title: "Human oversight and governance",
+      blurb:
+        "Critical decisions stay with clinical and operational teams, with clear review points for model-supported outputs.",
+    },
+    {
+      title: "Do not submit PHI in contact form",
+      blurb:
+        "Initial outreach channels are not intended for patient data. Secure pathways are established once engagement begins.",
+    },
+    {
+      title: "Traceable model operations",
+      blurb:
+        "Monitoring, logging, and version controls are built to support accountability and controlled iteration over time.",
+    },
   ],
   testimonials: [
     {

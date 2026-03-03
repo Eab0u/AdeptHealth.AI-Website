@@ -4,9 +4,9 @@ import { siteConfig } from "@/src/lib/site";
 
 export function Footer() {
   return (
-    <footer className="border-t py-10">
+    <footer className="border-t py-6">
       <Container>
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="text-lg font-semibold">{siteConfig.companyName}</p>
             <a
@@ -34,20 +34,22 @@ export function Footer() {
             </Link>
           </div>
         </div>
-        <p className="mt-8 text-xs text-slate-500 dark:text-slate-400">
-          {new Date().getFullYear()} {siteConfig.companyName}. All rights reserved.
-        </p>
-        <div className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-          <p>Created By Rahul Manchanda Izquierdo</p>
-          <p>Universitat de Maryland, College Park</p>
+        <div className="mt-3 flex flex-col gap-3 text-xs text-slate-500 dark:text-slate-400 sm:flex-row sm:items-end sm:justify-between">
           <p>
-            <a
-              href="mailto:rman7411@gmail.com"
-              className="underline underline-offset-4"
-            >
-              rman7411@gmail.com
-            </a>
+            {new Date().getFullYear()} {siteConfig.companyName}. All rights reserved.
           </p>
+          <div className="leading-relaxed sm:text-right">
+            <p>Created By Rahul Manchanda Izquierdo</p>
+            <p>Universitat de Maryland, College Park</p>
+            <p>
+              <a
+                href="mailto:rman7411@gmail.com"
+                className="underline underline-offset-4"
+              >
+                rman7411@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
       </Container>
     </footer>
